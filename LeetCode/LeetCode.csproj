@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Algorithms\Backtracking\" />
+    <Folder Include="Algorithms\DivideAndConquer\" />
+    <Folder Include="Algorithms\DynamicProgramming\" />
+    <Folder Include="Algorithms\GraphAlgorithms\" />
+    <Folder Include="Algorithms\Greedy\" />
+    <Folder Include="Algorithms\Recursion\" />
+    <Folder Include="Algorithms\Searching\" />
+    <Folder Include="Algorithms\Sorting\" />
+    <Folder Include="DataStructures\Arrays\" />
+    <Folder Include="DataStructures\Graphs\" />
+    <Folder Include="DataStructures\Heaps\" />
+    <Folder Include="DataStructures\LinkedLists\" />
+    <Folder Include="DataStructures\Queues\" />
+    <Folder Include="DataStructures\Stacks\" />
+    <Folder Include="DataStructures\Trees\" />
+    <Folder Include="Problems\Hard\" />
+  </ItemGroup>
+
+</Project>
