@@ -1,0 +1,100 @@
+﻿│
+├── -DesignPatterns/
+│   ├── 01-Creational/
+│   │   ├── Singleton/
+│   │   │   ├── Implementation.cs
+│   │   │   ├── ThreadSafe.cs
+│   │   │   ├── Examples/
+│   │   │   └── README.md
+│   │   ├── Factory/
+│   │   │   ├── SimpleFactory.cs
+│   │   │   ├── FactoryMethod.cs
+│   │   │   ├── AbstractFactory.cs
+│   │   │   ├── Examples/
+│   │   │   └── README.md
+│   │   ├── Builder/
+│   │   │   ├── Implementation.cs
+│   │   │   ├── FluentBuilder.cs
+│   │   │   ├── Examples/
+│   │   │   └── README.md
+│   │   ├── Prototype/
+│   │   │   ├── Implementation.cs
+│   │   │   ├── Examples/
+│   │   │   └── README.md
+│   │   └── ObjectPool/
+│   │       ├── Implementation.cs
+│   │       ├── Examples/
+│   │       └── README.md
+│   │
+│   ├── 02-Structural/
+│   │   ├── Adapter/
+│   │   │   ├── Implementation.cs
+│   │   │   ├── Examples/
+│   │   │   └── README.md
+│   │   ├── Bridge/
+│   │   │   ├── Implementation.cs
+│   │   │   ├── Examples/
+│   │   │   └── README.md
+│   │   ├── Composite/
+│   │   │   ├── Implementation.cs
+│   │   │   ├── Examples/
+│   │   │   └── README.md
+│   │   ├── Decorator/
+│   │   │   ├── Implementation.cs
+│   │   │   ├── Examples/
+│   │   │   └── README.md
+│   │   ├── Facade/
+│   │   │   ├── Implementation.cs
+│   │   │   ├── Examples/
+│   │   │   └── README.md
+│   │   ├── Flyweight/
+│   │   │   ├── Implementation.cs
+│   │   │   ├── Examples/
+│   │   │   └── README.md
+│   │   └── Proxy/
+│   │       ├── Implementation.cs
+│   │       ├── Examples/
+│   │       └── README.md
+│   │
+│   └── 03-Behavioral/
+│       ├── ChainOfResponsibility/
+│       │   ├── Implementation.cs
+│       │   ├── Examples/
+│       │   └── README.md
+│       ├── Command/
+│       │   ├── Implementation.cs
+│       │   ├── Examples/
+│       │   └── README.md
+│       ├── Iterator/
+│       │   ├── Implementation.cs
+│       │   ├── Examples/
+│       │   └── README.md
+│       ├── Mediator/
+│       │   ├── Implementation.cs
+│       │   ├── Examples/
+│       │   └── README.md
+│       ├── Memento/
+│       │   ├── Implementation.cs
+│       │   ├── Examples/
+│       │   └── README.md
+│       ├── Observer/
+│       │   ├── Implementation.cs
+│       │   ├── Examples/
+│       │   └── README.md
+│       ├── State/
+│       │   ├── Implementation.cs
+│       │   ├── Examples/
+│       │   └── README.md
+│       ├── Strategy/
+│       │   ├── Implementation.cs
+│       │   ├── Examples/
+│       │   └── README.md
+│       ├── TemplateMethod/
+│       │   ├── Implementation.cs
+│       │   ├── Examples/
+│       │   └── README.md
+│       └── Visitor/
+│           ├── Implementation.cs
+│           ├── Examples/
+│           └── README.md
+│
