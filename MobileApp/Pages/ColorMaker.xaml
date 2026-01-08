@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MobileApp.Pages.ColorMaker"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="ColorMaker">
+
+    <Grid x:Name="Container">
+        <Border
+            Padding="20"
+            BackgroundColor="WhiteSmoke"
+            HorizontalOptions="Center"
+            StrokeThickness="0.5"
+            VerticalOptions="Center">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="15" />
+            </Border.StrokeShape>
+            <StackLayout>
+                <Label
+                    FontSize="Medium"
+                    Text="Red"
+                    TextColor="Black" />
+                <Slider
+                    x:Name="RedSlider"
+                    Maximum="255"
+                    MaximumTrackColor="DarkSlateGrey"
+                    Minimum="0"
+                    MinimumTrackColor="ForestGreen"
+                    ValueChanged="Slider_ValueChanged" />
+                <Label
+                    FontSize="Medium"
+                    Text="Blue"
+                    TextColor="Black" />
+                <Slider
+                    x:Name="BlueSlider"
+                    Maximum="255"
+                    MaximumTrackColor="DarkSlateGrey"
+                    Minimum="0"
+                    MinimumTrackColor="ForestGreen"
+                    ValueChanged="Slider_ValueChanged" />
+                <Label
+                    FontSize="Medium"
+                    Text="Green"
+                    TextColor="Black" />
+                <Slider
+                    x:Name="GreenSlider"
+                    Maximum="255"
+                    MaximumTrackColor="DarkSlateGrey"
+                    Minimum="0"
+                    MinimumTrackColor="ForestGreen"
+                    ValueChanged="Slider_ValueChanged" />
+
+                <Label x:Name="ColorLabel" TextColor="Black" />
+
+                <Button
+                    x:Name="RandomColorButton"
+                    Clicked="RandomColorButton_Clicked"
+                    FontSize="Large"
+                    Shadow="#000000 4 4"
+                    Text="Generate Random Color"
+                    TextColor="White" />
+            </StackLayout>
+        </Border>
+    </Grid>
+</ContentPage>
