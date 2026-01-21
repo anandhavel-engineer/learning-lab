@@ -5,10 +5,99 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="PerfectShare">
 
-    <VerticalStackLayout>
-        <Label
-            HorizontalOptions="Center"
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" />
-    </VerticalStackLayout>
+    <Grid Padding="20" RowDefinitions=".4*,.6*" RowSpacing="15">
+
+        <!-- Summary Card -->
+        <Border Grid.Row="0" Padding="20" BackgroundColor="Gray">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="20" />
+            </Border.StrokeShape>
+
+            <Grid RowDefinitions=".1*,.9*" RowSpacing="15" VerticalOptions="Center">
+
+                <Label
+                    Grid.Row="0"
+                    Text="Perfect Share"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalTextAlignment="Center"
+                    TextColor="White" />
+
+                <Grid Grid.Row="1" ColumnDefinitions=".4*,2,.6*">
+
+                    <Label
+                        Grid.Column="0"
+                        x:Name="TotalSharePerPerson"
+                        Text="$ 00.0"
+                        FontSize="Large"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        TextColor="White" />
+
+                    <BoxView
+                        Grid.Column="1"
+                        BackgroundColor="Black" />
+
+                    <VerticalStackLayout Grid.Column="2" HorizontalOptions="End">
+
+                        <Label Text="Total Bill Amount" FontSize="Small" TextColor="White" HorizontalOptions="End" />
+                        <Label x:Name="TotalBill" Text="$ 00.0" FontSize="Large" TextColor="White" HorizontalOptions="End" />
+
+                        <Label Text="Each Person Pays" FontSize="Small" TextColor="White" HorizontalOptions="End" />
+                        <Label x:Name="perPersonBill" Text="$ 00.0" FontSize="Large" TextColor="White" HorizontalOptions="End" />
+
+                        <Label Text="Total Tip Amount" FontSize="Small" TextColor="White" HorizontalOptions="End" />
+                        <Label x:Name="labelTipAmount" Text="$ 00.0" FontSize="Large" TextColor="White" HorizontalOptions="End" />
+
+                        <Label Text="Each Person Tip Share" FontSize="Small" TextColor="White" HorizontalOptions="End" />
+                        <Label x:Name="labelTipShare" Text="$ 00.0" FontSize="Large" TextColor="White" HorizontalOptions="End" />
+
+                    </VerticalStackLayout>
+
+                </Grid>
+            </Grid>
+        </Border>
+
+        <!-- Input Section -->
+        <Grid Grid.Row="1" ColumnDefinitions=".4*,.6*" RowDefinitions="*,*,*,*" RowSpacing="20">
+
+            <Label Grid.Row="0" Grid.Column="0" Text="Total Bill" VerticalOptions="Center" />
+            <Entry Grid.Row="0" Grid.Column="1" x:Name="BillAmountentry" Keyboard="Numeric" Completed="BillAmount_Completed" VerticalOptions="Center" />
+
+            <Label Grid.Row="1" Grid.Column="0" x:Name="tipbuttonlabel" Text="Tip %" VerticalOptions="Center" />
+            <Grid Grid.Row="1" Grid.Column="1" ColumnDefinitions="*,*,*" ColumnSpacing="12" VerticalOptions="Center">
+                <Button Grid.Column="0" Text="10%" Clicked="TipPercent_Clicked" />
+                <Button Grid.Column="1" Text="15%" Clicked="TipPercent_Clicked" />
+                <Button Grid.Column="2" Text="20%" Clicked="TipPercent_Clicked" />
+            </Grid>
+
+            <Label Grid.Row="2" Grid.Column="0" Text="Tip %" x:Name="tiplabel" VerticalOptions="Center" />
+            <Slider Grid.Row="2" x:Name="tipslider" ValueChanged="tipslider_ValueChanged" Grid.Column="1" Minimum="0" Maximum="50" VerticalOptions="Center" />
+
+            <Label Grid.Row="3" Grid.Column="0" Text="Number of Persons" VerticalOptions="Center" />
+            <Grid
+                Grid.Row="3"
+                Grid.Column="1"
+                ColumnDefinitions="Auto,*,Auto"
+                ColumnSpacing="0"
+                VerticalOptions="Center">
+
+                <Button x:Name="btnMinus" Text="-" IsEnabled="False" Clicked="btnMinus_Clicked" FontAttributes="Bold" />
+
+                <Label
+                    Grid.Column="1"
+                    Text="1"
+                    x:Name="labelNumberOfPersons"
+                    FontSize="Medium"
+                    BackgroundColor="Gray"
+                    TextColor="White"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center" />
+
+                <Button x:Name="btnPlus" Clicked="btnPlus_Clicked" Grid.Column="2" Text="+" FontAttributes="Bold" />
+
+            </Grid>
+
+        </Grid>
+    </Grid>
 </ContentPage>

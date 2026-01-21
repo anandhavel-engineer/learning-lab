@@ -28,6 +28,16 @@
             FontSize="20"
             Text="Perfect Share"
             TextColor="White" />
+        <Button
+            x:Name="CodeQuotesButton"
+            Grid.Row="1"
+            Grid.Column="0"
+            Margin="20"
+            BackgroundColor="LightCoral"
+            Clicked="CodeQuotesButton_Clicked"
+            FontSize="20"
+            Text="Code Quotes"
+            TextColor="White" />
 
 
     </Grid>

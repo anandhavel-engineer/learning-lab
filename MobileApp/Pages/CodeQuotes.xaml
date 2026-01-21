@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApp.Pages.CodeQuotes"
+             Title="CodeQuotes">
+
+    <Grid x:Name="GridBackground" RowDefinitions="*,Auto" Padding="20" BackgroundColor="#121212">
+        <Label x:Name="QuoteLabel" Grid.Row="0" Text="Hello World" TextColor="White" FontSize="28" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" LineBreakMode="WordWrap" />
+        <Button x:Name="btnGenerateNewQuote" Grid.Row="1" Text="Generate New Quote" Clicked="btnGenerateNewQuote_Clicked" HeightRequest="55" CornerRadius="14" FontSize="16" FontAttributes="Bold" BackgroundColor="#4F46E5" TextColor="White" Margin="0,20,0,0"  />
+    </Grid>
+
+</ContentPage>

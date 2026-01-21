@@ -4,8 +4,6 @@ namespace MobileApp
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
         public MainPage()
         {
             InitializeComponent();
@@ -19,6 +17,11 @@ namespace MobileApp
         private void PerfectShareButton_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new PerfectShare());
+        }
+
+        private void CodeQuotesButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CodeQuotes());
         }
     }
 }

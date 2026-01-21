@@ -62,6 +62,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<MauiXaml Update="Pages\CodeQuotes.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 		<MauiXaml Update="Pages\ColorMaker.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>

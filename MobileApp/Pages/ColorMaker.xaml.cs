@@ -8,7 +8,11 @@ public partial class ColorMaker : ContentPage
     public ColorMaker()
     {
         InitializeComponent();
-        SetColor(new Color());
+        Random random = new Random();
+        int red = random.Next(256);
+        int green = random.Next(256);
+        int blue = random.Next(256);
+        SetColor(Color.FromRgb(red, green, blue));
     }
 
     private void RandomColorButton_Clicked(object sender, EventArgs e)
