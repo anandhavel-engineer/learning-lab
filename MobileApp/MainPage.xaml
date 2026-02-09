@@ -2,44 +2,100 @@
 <ContentPage
     x:Class="MobileApp.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="#FDF7FF">
 
-    <Grid
-        BackgroundColor="AliceBlue"
-        ColumnDefinitions="*,*"
-        RowDefinitions="*,*,*,*">
-        <Button
-            x:Name="ColorMakerButton"
-            Grid.Row="0"
-            Grid.Column="0"
-            Margin="20"
-            BackgroundColor="LightCoral"
-            Clicked="ColorMakerButton_Clicked"
-            FontSize="20"
-            Text="Color Maker"
-            TextColor="White" />
-        <Button
-            x:Name="PerfectShareButton"
-            Grid.Row="0"
-            Grid.Column="1"
-            Margin="20"
-            BackgroundColor="LightCoral"
-            Clicked="PerfectShareButton_Clicked"
-            FontSize="20"
-            Text="Perfect Share"
-            TextColor="White" />
-        <Button
-            x:Name="CodeQuotesButton"
-            Grid.Row="1"
-            Grid.Column="0"
-            Margin="20"
-            BackgroundColor="LightCoral"
-            Clicked="CodeQuotesButton_Clicked"
-            FontSize="20"
-            Text="Code Quotes"
-            TextColor="White" />
+    <ContentPage.Resources>
+        <Style x:Key="MaterialFilledButton" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#6750A4" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="HeightRequest" Value="48" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+    </ContentPage.Resources>
 
 
-    </Grid>
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="16"
+            Spacing="16">
 
+            <!-- Header -->
+            <Label
+                Text="Developer Tools"
+                FontSize="28"
+                FontAttributes="Bold"
+                TextColor="#1C1B1F" />
+
+            <!-- Card -->
+            <Border
+                BackgroundColor="#FFFFFF"
+                StrokeShape="RoundRectangle 24"
+                Padding="16">
+
+                <Grid
+                    ColumnDefinitions="*,*"
+                    RowDefinitions="Auto,Auto"
+                    RowSpacing="12"
+                    ColumnSpacing="12">
+
+                    <!-- Buttons -->
+                    <Button
+                        Text="Color Maker"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Clicked="ColorMakerButton_Clicked"
+                        Style="{StaticResource MaterialFilledButton}" />
+
+                    <Button
+                        Text="Perfect Share"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Clicked="PerfectShareButton_Clicked"
+                        Style="{StaticResource MaterialFilledButton}" />
+
+                    <Button
+                        Text="Code Quotes"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Clicked="CodeQuotesButton_Clicked"
+                        Style="{StaticResource MaterialFilledButton}" />
+
+                    <Button
+                        Text="Generate FCM Token"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Clicked="GenerateFCMToken_Clicked"
+                        Style="{StaticResource MaterialFilledButton}" />
+
+                </Grid>
+            </Border>
+
+            <!-- Token Display -->
+            <Border
+                x:Name="FCMTokenSection"
+                BackgroundColor="#FFFFFF"
+                StrokeShape="RoundRectangle 16"
+                Padding="12">
+
+                <VerticalStackLayout Spacing="8">
+                    <Label
+                        Text="FCM Token"
+                        FontSize="14"
+                        TextColor="#49454F" />
+
+                    <Editor
+                        x:Name="FCMTokenEditor"
+                        AutoSize="TextChanges"
+                        BackgroundColor="#F4EFF4"
+                        TextColor="#1C1B1F"
+                        HeightRequest="120" />
+                </VerticalStackLayout>
+
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

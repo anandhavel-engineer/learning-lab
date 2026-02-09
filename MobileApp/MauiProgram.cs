@@ -1,8 +1,11 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Maui.LifecycleEvents;
 
-using Plugin.Firebase.Bundled.Shared;
-using Plugin.Firebase.Bundled.Platforms.Android;
+#if IOS
+using Plugin.Firebase.Core.Platforms.iOS;
+#elif ANDROID
+using Plugin.Firebase.Core.Platforms.Android;
+#endif
 
 namespace MobileApp
 {
@@ -31,32 +34,18 @@ namespace MobileApp
         {
             builder.ConfigureLifecycleEvents(events =>
             {
-#if ANDROID
+#if IOS
+        events.AddiOS(iOS => iOS.WillFinishLaunching((_, __) => {
+            CrossFirebase.Initialize();
+            FirebaseCloudMessagingImplementation.Initialize();
+            return false;
+        }));
+#elif ANDROID
                 events.AddAndroid(android => android.OnCreate((activity, _) =>
-                    CrossFirebase.Initialize(
-                        activity,
-                        () => activity,
-                        CreateCrossFirebaseSettings()
-                    )));
-#elif IOS
-                events.AddiOS(iOS => iOS.FinishedLaunching((_, _) =>
-                {
-                    CrossFirebase.Initialize(CreateCrossFirebaseSettings());
-                    return false;
-                }));
+                CrossFirebase.Initialize(activity, () => activity)));
 #endif
             });
-
             return builder;
-        }
-
-        private static CrossFirebaseSettings CreateCrossFirebaseSettings()
-        {
-            return new CrossFirebaseSettings(
-                isAuthEnabled: false,
-                isCloudMessagingEnabled: true,
-                isCrashlyticsEnabled: false
-            );
         }
     }
 }
