@@ -416,3 +416,8 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+
+# Firebase / Google Services
+**/google-services.json
+**/GoogleService-Info.plist
