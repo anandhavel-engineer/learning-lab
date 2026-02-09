@@ -5,6 +5,19 @@
         public App()
         {
             InitializeComponent();
+            
+            // Initialize Firebase Cloud Messaging
+            Task.Run(async () =>
+            {
+                try
+                {
+                    await NotificationBootstrapService.InitializeAsync();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Firebase initialization error: {ex.Message}");
+                }
+            });
         }
 
         protected override Window CreateWindow(IActivationState? activationState)
