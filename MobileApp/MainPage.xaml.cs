@@ -30,6 +30,8 @@ namespace MobileApp
         private async void GenerateFCMToken_Clicked(object sender, EventArgs e)
         {
             FCMTokenSection.IsVisible = true;
+            //CrossFirebaseCrashlytics.Current.Log("Testing Crashlytics");
+            //throw new Java.Lang.RuntimeException("🔥 Test crash from MAUI");
 
             await CrossFirebaseCloudMessaging.Current.CheckIfValidAsync();
             var token = await CrossFirebaseCloudMessaging.Current.GetTokenAsync();

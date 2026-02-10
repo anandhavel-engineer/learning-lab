@@ -1,16 +1,19 @@
-﻿namespace MobileApp
+﻿using Plugin.Firebase.Crashlytics;
+
+namespace MobileApp
 {
     public partial class App : Application
     {
         public App()
         {
             InitializeComponent();
-            
+
             // Initialize Firebase Cloud Messaging
             Task.Run(async () =>
             {
                 try
                 {
+                    CrossFirebaseCrashlytics.Current.SetCrashlyticsCollectionEnabled(true);
                     await NotificationBootstrapService.InitializeAsync();
                 }
                 catch (Exception ex)
